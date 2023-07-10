@@ -44,8 +44,9 @@ st.title('Query PDF')
 st.text('natural language chat interface to ask your pdf files some questions')
 
 path = "./2021-tesla-impact-report.pdf"
-if 'df' not in st.session_state:
+if 'filetext' not in st.session_state:
     st.session_state['filetext'] = extract_text(path)
+if 'knowledgeBase' not in st.session_state:
     st.session_state['knowledgeBase'] = process_text(st.session_state['filetext'])
 
 st.divider()
@@ -55,6 +56,7 @@ st.caption('Default PDF = Tesla 2021 Impact Report')
 upload = st.file_uploader("Upload Custom Dataset (.pdf file)")
 if upload:
     st.session_state['filetext'] = extract_text(upload)
+    st.session_state['knowledgeBase'] = process_text(st.session_state['filetext'])
 
 st.text_area('pdf text preview', st.session_state['filetext'])
 
