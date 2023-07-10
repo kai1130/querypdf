@@ -64,7 +64,7 @@ st.divider()
 st.subheader('Chat Interface')
 
 with st.form('chat_area'):
-    query = st.text_area('Enter Question(s)', 'what are the different corporate governance committees?\nwhat is the 10th top choice company for graduate engineers?')
+    query = st.text_area('Enter Question(s)', 'How many vehicles is Tesla aiming to sell per year in 2030?')
     submitted = st.form_submit_button('Submit Question')
 
     if submitted:
