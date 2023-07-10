@@ -55,13 +55,13 @@ upload = st.file_uploader("Upload Custom Dataset (.pdf file)")
 if upload:
     st.session_state['filetext'] = extract_text(upload)
 
-st.text_area(st.session_state['filetext'])
+st.text_area('pdf text preview', st.session_state['filetext'])
 
 st.divider()
 st.subheader('Chat Interface')
 
 with st.form('chat_area'):
-    text = st.text_area('Enter Question(s)', 'what are the different corporate governance committees?\nwhat is the 10th top choice company for graduate engineers?')
+    query = st.text_area('Enter Question(s)', 'what are the different corporate governance committees?\nwhat is the 10th top choice company for graduate engineers?')
     submitted = st.form_submit_button('Submit Question')
 
     if submitted:
