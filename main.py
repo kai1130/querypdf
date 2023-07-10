@@ -27,7 +27,7 @@ def process_text(text):
     return knowledgeBase
 
 def query_document(query):
-    docs = knowledgeBase.similarity_search(query)
+    docs = st.session_state['knowledgeBase'].similarity_search(query)
 
     llm = OpenAI(temperature=0)
     chain = load_qa_chain(llm, chain_type='stuff')
@@ -46,6 +46,7 @@ st.text('natural language chat interface to ask your pdf files some questions')
 path = "./2021-tesla-impact-report.pdf"
 if 'df' not in st.session_state:
     st.session_state['filetext'] = extract_text(path)
+    st.session_state['knowledgeBase'] = process_text(st.session_state['filetext'])
 
 st.divider()
 st.subheader('Select Data Source')
