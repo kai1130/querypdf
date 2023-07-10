@@ -29,7 +29,7 @@ def process_text(text):
 def query_document(query):
     docs = st.session_state['knowledgeBase'].similarity_search(query)
 
-    llm = OpenAI(model_name='gpt-4-0613', temperature=0)
+    llm = OpenAI(temperature=0)
     chain = load_qa_chain(llm, chain_type='stuff')
 
     with get_openai_callback() as cost:
