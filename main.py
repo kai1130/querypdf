@@ -61,7 +61,7 @@ if upload:
 st.text_area('pdf text preview', st.session_state['filetext'])
 
 st.divider()
-st.subheader('Chat Interface')
+st.subheader('Query Interface')
 
 with st.form('chat_area'):
     query = st.text_area('Enter Question(s)', 'How many vehicles is Tesla aiming to sell per year in 2030?')
