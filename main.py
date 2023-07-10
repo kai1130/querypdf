@@ -64,7 +64,7 @@ st.divider()
 st.subheader('Query Interface')
 
 with st.form('chat_area'):
-    query = st.text_area('Enter Question(s)', 'How many vehicles is Tesla aiming to sell per year in 2030?')
+    query = st.text_area('Enter Query', 'Give me 5 interesting metrics from this report')
     submitted = st.form_submit_button('Submit Question')
 
     if submitted:
