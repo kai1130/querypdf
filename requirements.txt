@@ -2,3 +2,4 @@ openai
 langchain
 tabulate
 pdfminer.six
+tiktoken
